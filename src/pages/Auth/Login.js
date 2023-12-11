@@ -25,7 +25,7 @@ export default function Login() {
                 dispatch({ type: "LOGIN", payload: decodeUserData })
             })
             .catch((err) => {
-                message.error("Fill correct info")
+                message.error("Fill correct info",err)
             })
     }
 
