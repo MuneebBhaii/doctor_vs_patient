@@ -1,5 +1,5 @@
 import { message } from 'antd';
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuthContext } from '../context/AuthContext';
 
@@ -30,7 +30,7 @@ export default function Navbar() {
               <Link className="nav-link" to='/Appointment'>Appointment</Link>
             </li>
             <li>
-              <Link className="nav-link disabled" to='/Income'>Income Details</Link>
+              <Link className="nav-link disabled" to='/Income'>Previous Details</Link>
             </li>
           </ul>
           <form className="d-flex" role="search">
