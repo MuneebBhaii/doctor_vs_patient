@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function stickyWall() {
+export default function Home() {
   return (
     <main className="container-fluid bg-dark">
       <div className="container">
         <div className="row mt-3">
-          <div className="col">
+          <div className="col-12 mb-3 col-md-6 mb-md-0 col-lg-6 col-xl-6">
             <div className="card p-2 p-md-3 p-lg-4">
               <h3 className='text-center'>Schedule Details</h3>
               <div className="row">
@@ -44,7 +44,7 @@ export default function stickyWall() {
               </div>
             </div>
           </div>
-          <div className="col">
+          <div className="col-12 col-md-6 col-lg-6 col-xl-6">
             <div className="card p-2 p-md-3 p-lg-4">
               <h3 className='text-center mb-4'>Appointment Details</h3>
               <div className="row mt-2">
