@@ -26,7 +26,7 @@ export default function Login() {
             return alert('Please enter correct password')
         }
         console.log(state)
-        axios.post("https://doctor-vs-patient.vercel.app/login", state)
+        axios.post("https://doctor-vs-patient-server.vercel.app/login", state)
             .then((res) => {
                 window.sessionStorage.setItem("token", res.data.token)
                 const decodeUserData = jwtDecode(res.data.token).user;

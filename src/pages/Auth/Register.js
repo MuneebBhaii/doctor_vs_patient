@@ -32,13 +32,13 @@ export default function Register() {
             return alert('Please enter strong password')
         }
         console.log(state)
-        axios.post("https://doctor-vs-patient.vercel.app/register",state)
+        axios.post("https://doctor-vs-patient-server.vercel.app/register",state)
         .then((res)=>{
             message.success("Successful register")
             nevigate('/login')
         })
         .catch((err) => {
-            alert("server is not nuning")
+            alert("server is not nuning",err)
         })
         
     }
