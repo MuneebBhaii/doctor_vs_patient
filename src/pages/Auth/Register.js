@@ -12,14 +12,33 @@ export default function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const {fullname , email ,dob, roll , number , password } = state
+        if(!fullname || fullname === '' || fullname.length<3){
+            return alert('Please enter a full name')
+        }
+        if(!email || email === ''){
+            return alert('Please enter correct email')
+        }
+        if(!dob || dob === ''){
+            return alert('Please enter correct date of birth')
+        }
+        if(!roll || roll === ''){
+            return alert('Please enter select roll')
+        }
+        if(!number || number === '' || number.length<10){
+            return alert('Please enter a number')
+        }
+        if(!password || password === '' || password.length<5){
+            return alert('Please enter strong password')
+        }
         console.log(state)
-        axios.post("http://localhost:8000/register",state)
+        axios.post("https://doctor-vs-patient.vercel.app/register",state)
         .then((res)=>{
             message.success("Successful register")
             nevigate('/login')
         })
         .catch((err) => {
-            message.error(err)
+            alert("server is not nuning")
         })
         
     }

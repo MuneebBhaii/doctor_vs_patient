@@ -15,8 +15,18 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const {email , roll , password} = state 
+        if(!email || email === ''){
+            return alert('Please enter correct email')
+        }
+        if(!roll || roll === ''){
+            return alert('Please enter select roll')
+        }
+        if(!password || password === ''){
+            return alert('Please enter correct password')
+        }
         console.log(state)
-        axios.post("http://localhost:8000/login", state)
+        axios.post("https://doctor-vs-patient.vercel.app/login", state)
             .then((res) => {
                 window.sessionStorage.setItem("token", res.data.token)
                 const decodeUserData = jwtDecode(res.data.token).user;
@@ -25,7 +35,7 @@ export default function Login() {
                 dispatch({ type: "LOGIN", payload: decodeUserData })
             })
             .catch((err) => {
-                message.error("Fill correct info",err)
+                alert("This account not register",err)
             })
     }
 
